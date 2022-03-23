@@ -22,7 +22,7 @@ function PostForm(props: {
 
   return (
     <Container>
-      <div style={{ display: "flex", flexDirection: "column", gap: "15px 0" }}>
+      <div className="flex flex-col gap-y-4">
         <input onChange={handleTitleChange} placeholder="Title" value={title} />
         <textarea
           onChange={handleContentChange}

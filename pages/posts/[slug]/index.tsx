@@ -127,8 +127,7 @@ export default function PostPage({ post }) {
               )}
             >
               <pre
-                className="prose mt-10"
-                style={{ whiteSpace: "pre-wrap" }}
+                className="prose mt-10 whitespace-pre-wrap"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </HighlightPop>
