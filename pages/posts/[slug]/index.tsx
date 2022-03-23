@@ -61,8 +61,9 @@ export default function PostPage({ post }) {
   };
 
   const handleQuoteClick = (quote) => {
-    unwrap(currentMarkElement);
     try {
+      unwrap(currentMarkElement);
+
       const range = toRange(
         quote.startXpath,
         quote.startOffset,
@@ -79,7 +80,6 @@ export default function PostPage({ post }) {
 
       setCurrentMarkElement(markElement);
     } catch (e) {
-      // TODO: handle error
       console.error(e);
     }
   };

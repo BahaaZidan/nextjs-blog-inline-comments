@@ -5,7 +5,7 @@ export function unwrap(node: HTMLElement) {
       node.parentNode.insertBefore(node.firstChild, node);
     }
 
-    node.parentNode.removeChild(node);
-    parent.normalize();
+    parent?.removeChild(node);
+    parent?.normalize();
   }
 }
