@@ -24,11 +24,16 @@ export default function PostPage({ post }) {
   const [currentMarkElement, setCurrentMarkElement] = useState<HTMLElement>();
 
   const handleHighlightClick = () => {
-    const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-    setQuoteRange(range);
+    try {
+      unwrap(currentMarkElement);
+      const selection = window.getSelection();
+      const range = selection.getRangeAt(0);
+      setQuoteRange(range);
 
-    document.getElementById("comments-section").scrollIntoView();
+      document.getElementById("comments-section").scrollIntoView();
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   const populateComments = async () => {
